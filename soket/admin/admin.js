@@ -11,5 +11,5 @@ socket.on('client', (payload) => {
     console.log(payload);
     console.log('====================================');
 
-    socket.emit('recived', payload)
+    socket.emit('received', payload)
 })

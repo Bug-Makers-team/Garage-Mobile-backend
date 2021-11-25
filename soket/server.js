@@ -7,6 +7,7 @@ const io = require('socket.io')(PORT);
 const service = io.of('/server');
 let massegQ = {
     serviceQ: {},
+    received: {}
 };
 
 service.on('connection', (socket) => {
@@ -21,11 +22,17 @@ service.on('connection', (socket) => {
         service.emit('client', { id: payload.id, payload: massegQ.serviceQ[payload.id] })
     })
 
-    service.on("recived", (payload) => {
-        // service.emit('recivedMsg', payload)
-        console.log("before deleting from Msg Q >>", msgQueue);
+    socket.on("received", (payload) => {
+        massegQ.received[payload.id] = payload
+        console.log("before deleting from Msg Q >>", massegQ);
+        service.emit('recivedMsg', { id: payload.id, payload: massegQ.received[payload.id]});    
         delete massegQ.serviceQ[payload.id];
-        console.log("after deleting from Msg Q >>", msgQueue);
 
     });
+
+    socket.on('clientReceived', payload=>{
+        delete massegQ.received[payload.id];
+        console.log("after deleting from Msg Q >>", massegQ);
+
+    })
 });

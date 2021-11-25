@@ -4,7 +4,7 @@
   "description": "",
   "main": "admin.js",
   "scripts": {
-    "start":"node admin.js ",
+    "start": "node admin.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
