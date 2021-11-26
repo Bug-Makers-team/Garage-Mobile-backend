@@ -1,7 +1,7 @@
 "use strict";
 
 const userModel=require('./users.js');
-const serviceModel=require('./Services/serviceModel.js');
+const serviceModel=require('./services.js');
 const Collection=require('./date-Collection.js');
 
 const { Sequelize, DataTypes } = require('sequelize');
@@ -28,6 +28,6 @@ module.exports = {
 
     db: sequelize,
     users: userModel(sequelize, DataTypes),
-    Service:new Collection(Service)
+    services:new Collection(Service)
   
   }
