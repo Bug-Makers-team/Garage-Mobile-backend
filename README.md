@@ -101,3 +101,7 @@
 ![](./assets/uml-2.png)
 ![](./assets/uml-3.jpg)
 
+
+# DataBase Schema 
+
+![](./assets/DataBaseSchema.PNG)
