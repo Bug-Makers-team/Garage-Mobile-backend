@@ -10,7 +10,8 @@ const PORT=process.env.PORT || 8080;
 const Error404Handlers=require('./error-handlers/404');
 const Error500Handler=require('./error-handlers/500');
 const authRoutes = require('../src/auth/routes/routes.js');
-const router=require('./auth/routes/v1')
+const routerAdmin=require('./auth/routes/v-Admin')
+const routerUser=require('./auth/routes/v-User')
 
 app.get('/',(req,res)=>{
     res.status(200).send('Hello from BUG-MAKERS 🤍')
@@ -24,7 +25,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use(authRoutes);
-app.use(router);
+app.use(routerAdmin);
+app.use(routerUser);
 app.use('*',Error404Handlers);
 app.use(Error500Handler);
 

@@ -2,6 +2,7 @@
 
 const userModel=require('./users.js');
 const serviceModel=require('./services.js');
+const myServiceModel=require('./myservices.js')
 const Collection=require('./date-Collection.js');
 
 const { Sequelize, DataTypes } = require('sequelize');
@@ -23,11 +24,12 @@ const sequelize = new Sequelize(DATABASE_URL,sequelizeOptions);
 
 
 const Service = serviceModel(sequelize, DataTypes);
+const myService = myServiceModel(sequelize, DataTypes);
 
 module.exports = {
 
     db: sequelize,
     users: userModel(sequelize, DataTypes),
-    services:new Collection(Service)
-  
+    services:new Collection(Service),
+    myService:new Collection(myService)
   }
