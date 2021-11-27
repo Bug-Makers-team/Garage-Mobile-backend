@@ -13,8 +13,8 @@
     "dev": "NODE_ENV=development nodemon index.js"
   },
   "jest": {
-    "testEnvironment": "node"  },
-    
+    "testEnvironment": "node"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Bug-Makers-team/Garage-Mobile-backend.git"
