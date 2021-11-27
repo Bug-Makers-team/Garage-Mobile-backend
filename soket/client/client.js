@@ -28,3 +28,5 @@ setInterval(() => {
   let payload = { id, carType, phone, carModel, service };
   socket.emit("service", payload);
 }, 5000);
+
+
