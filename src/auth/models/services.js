@@ -5,7 +5,8 @@ const serviceModel = (sequelize, DataTypes) => sequelize.define('Service', {
   description: { type: DataTypes.STRING, required: true },
   price: { 
       type: DataTypes.INTEGER,
-       required: true }
+       required: true },
+  imgURL:{type: DataTypes.STRING, required: true}
 });
 
 module.exports = serviceModel;
