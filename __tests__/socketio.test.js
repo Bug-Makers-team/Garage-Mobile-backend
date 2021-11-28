@@ -1,5 +1,4 @@
-require('socket.io')
-const {io,massegQ} = require("../socket/server");
+const {io} = require("../socket/server");
 const adminsocket=require('../socket/admin/admin');
 const clientsocket=require('../socket/client/client');
 
