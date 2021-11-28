@@ -31,5 +31,5 @@ module.exports = {
     db: sequelize,
     users: userModel(sequelize, DataTypes),
     services:new Collection(Service),
-    myService:new Collection(myService)
+    myservice:new Collection(myService)
   }

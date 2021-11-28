@@ -35,4 +35,24 @@ service.on('connection', (socket) => {
         console.log("after deleting from Msg Q >>", massegQ);
 
     })
+
+    socket.on('getAllServiceQ',()=>{
+      Object.keys(massegQ.serviceQ).forEach((id) => {
+        service.emit("client", {
+            payload: massegQ.serviceQ[id],
+            id: id,
+          });
+        });
+
+    })
+
+    socket.on('getAllReceived',()=>{
+      Object.keys(massegQ.received).forEach((id) => {
+        service.emit("recivedMsg", {
+            payload: massegQ.received[id],
+            id: id,
+          });
+        });
+
+    })
 });
