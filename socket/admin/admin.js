@@ -14,3 +14,7 @@ socket.on('client', (payload) => {
 
     socket.emit('received', payload)
 })
+
+// socket.disconnect();
+
+module.exports=socket
