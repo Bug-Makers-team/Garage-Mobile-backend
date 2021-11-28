@@ -34,13 +34,13 @@ describe("testing Server", () => {
     expect(consoleSpy).toHaveBeenCalled();
   });
 
-  xit("test queue massages", async () => {
-    adminsocket.disconnect();
-    massegQ.serviceQ[payload.id] = payload
-    io.emit("service", payload);
-    console.log(massegQ);
-    await consoleSpy();
-    expect(consoleSpy).toHaveBeenCalled();
-    expect(massegQ.serviceQ).toEqual();
-  });
+  // it("test queue massages", async () => {
+  //   adminsocket.disconnect();
+  //   massegQ.serviceQ[payload.id] = payload
+  //   io.emit("service", payload);
+  //   console.log(massegQ);
+  //   await consoleSpy();
+  //   expect(consoleSpy).toHaveBeenCalled();
+  //   expect(massegQ.serviceQ).toEqual();
+  // });
 });
