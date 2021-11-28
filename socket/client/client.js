@@ -7,6 +7,7 @@ const host = "http://localhost:8080";
 const socket = io.connect(`${host}/server`);
 var faker = require("faker");
 
+socket.emit('getAllReceived');
 // socket.emit('service',service);
 // socket.emit('emergency', emergency);
 socket.on("recivedMsg", (payload) => {
@@ -19,14 +20,14 @@ socket.on("recivedMsg", (payload) => {
 // function service(payload) {
 
 // }
-setInterval(() => {
+// setInterval(() => {
   let carType = faker.name.findName();
   let phone = faker.phone.phoneNumber();
   let carModel = faker.datatype.number();
   let service = faker.random.words();
   let id = faker.datatype.uuid();
   let payload = { id, carType, phone, carModel, service };
-  socket.emit("service", payload);
-}, 5000);
+// }, 5000);
 
+socket.emit("service", payload);
 
