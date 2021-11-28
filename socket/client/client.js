@@ -13,21 +13,22 @@ socket.emit('getAllReceived');
 socket.on("recivedMsg", (payload) => {
   console.log('====================================');
   console.log(`the admin received your order num ${payload.id}`);
-  socket.emit('clientReceived', payload)
+  socket.emit('clientReceived', payload);
   console.log('====================================');
 });
 
 // function service(payload) {
-
-// }
-// setInterval(() => {
-  let carType = faker.name.findName();
-  let phone = faker.phone.phoneNumber();
-  let carModel = faker.datatype.number();
-  let service = faker.random.words();
-  let id = faker.datatype.uuid();
-  let payload = { id, carType, phone, carModel, service };
-// }, 5000);
-
-socket.emit("service", payload);
-
+  
+  // }
+  // setInterval(() => {
+    let carType = faker.name.findName();
+    let phone = faker.phone.phoneNumber();
+    let carModel = faker.datatype.number();
+    let service = faker.random.words();
+    let id = faker.datatype.uuid();
+    let payload = { id, carType, phone, carModel, service };
+    // }, 5000);
+    
+    socket.emit("service", payload);
+    
+    module.exports=socket

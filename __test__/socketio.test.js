@@ -1,6 +1,7 @@
-const io = require("../socket/server");
-require('../socket/admin/admin')
-require('../socket/client/client')
+const {io,massegQ} = require("../socket/server");
+const adminsocket=require('../socket/admin/admin');
+const clientsocket=require('../socket/client/client');
+
 let consoleSpy;
 let payload = {
   id: "97ed434e-945d-4823-a994-c7978acb4f8d",
@@ -14,8 +15,10 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-    io.close();
-  consoleSpy.mockRestore();
+io.close();
+consoleSpy.mockRestore();
+adminsocket.disconnect();
+clientsocket.disconnect();
 });
 
 describe("testing Server", () => {
@@ -25,15 +28,19 @@ describe("testing Server", () => {
     expect(consoleSpy).toHaveBeenCalled();
   });
 
-//   xit("test in-transit", async () => {
-//     server.emit("in-transit", payload);
-//     await consoleSpy();
-//     expect(consoleSpy).toHaveBeenCalled();
-//   });
+  it("test received", async () => {
+    io.emit("received", payload);
+    await consoleSpy();
+    expect(consoleSpy).toHaveBeenCalled();
+  });
 
-//   xit("test delivered", async () => {
-//     server.emit("delivered", payload);
-//     await consoleSpy();
-//     expect(consoleSpy).toHaveBeenCalled();
-//   });
+  xit("test queue massages", async () => {
+    adminsocket.disconnect();
+    massegQ.serviceQ[payload.id] = payload
+    io.emit("service", payload);
+    console.log(massegQ);
+    await consoleSpy();
+    expect(consoleSpy).toHaveBeenCalled();
+    expect(massegQ.serviceQ).toEqual();
+  });
 });
