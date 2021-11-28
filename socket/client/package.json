@@ -5,13 +5,14 @@
   "main": "client.js",
   "scripts": {
     "start": "node client.js ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "faker": "^5.5.3",
+    "jest": "^27.3.1",
     "socket.io-client": "^4.4.0"
   }
 }

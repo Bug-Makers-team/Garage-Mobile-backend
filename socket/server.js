@@ -56,3 +56,5 @@ service.on('connection', (socket) => {
 
     })
 });
+
+module.exports=io;
