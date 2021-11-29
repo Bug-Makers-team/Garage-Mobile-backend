@@ -29,6 +29,11 @@
 
 ---
 
+# Links:
+- Heroku live link: https://garage-mobile.herokuapp.com
+
+- Back-end github actions link: https://github.com/Bug-Makers-team/Garage-Mobile-backend/actions
+- chat repo link: https://github.com/RamiZregat/react-socketio-chat-app
 
 # Wireframe:
 ![](./assets/Wireframe.png)
