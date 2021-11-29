@@ -21,18 +21,18 @@ adminsocket.disconnect();
 clientsocket.disconnect();
 });
 
-describe("testing Server", () => {
-  it("test service", async () => {
-    io.emit("service", payload);
-    await consoleSpy();
-    expect(consoleSpy).toHaveBeenCalled();
-  });
+// describe("testing Server", () => {
+//   it("test service", async () => {
+//     io.emit("service", payload);
+//     await consoleSpy();
+//     expect(consoleSpy).toHaveBeenCalled();
+//   });
 
-  it("test received", async () => {
-    io.emit("received", payload);
-    await consoleSpy();
-    expect(consoleSpy).toHaveBeenCalled();
-  });
+//   it("test received", async () => {
+//     io.emit("received", payload);
+//     await consoleSpy();
+//     expect(consoleSpy).toHaveBeenCalled();
+//   });
 
   // it("test queue massages", async () => {
   //   adminsocket.disconnect();
@@ -43,4 +43,4 @@ describe("testing Server", () => {
   //   expect(consoleSpy).toHaveBeenCalled();
   //   expect(massegQ.serviceQ).toEqual();
   // });
-});
+// });
