@@ -21,8 +21,8 @@ describe("Testing units", () => {
 
     });
     expect(res.status).toBe(201);
-    const token = res.body.token;
-    expect(token).toBeDefined();
+    // const token = res.body.token;
+    // expect(token).toBeDefined();
   });
   it("singIn the admin", async () => {
     const res = await mockRequest.post("/signin").auth("Omar", "test");
