@@ -1,17 +1,17 @@
 {
-  "name": "client",
+  "name": "admin",
   "version": "1.0.0",
   "description": "",
-  "main": "client.js",
+  "main": "admin.js",
   "scripts": {
-    "start": "node client.js ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node admin.js ",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faker": "^5.5.3",
+    "jest": "^27.3.1",
     "socket.io-client": "^4.4.0"
   }
 }

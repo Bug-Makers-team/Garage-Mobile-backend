@@ -9,8 +9,8 @@
     "init:config": "sequelize init:config",
     "db:create": "sequelize db:create",
     "test-watch": "NODE_ENV=test jest --watchAll",
-    "test": "NODE_ENV=test jest",
-    "dev": "NODE_ENV=development nodemon index.js"
+    "test": "NODE_ENV=test jest --detectOpenHandles",
+    "dev": "NODE_ENV=test nodemon index.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -32,9 +32,13 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
     "pg": "^8.7.1",
     "sequelize": "^6.12.0-alpha.1",
     "sequelize-cli": "^6.3.0",
+    "socket.io": "^4.4.0",
+    "socket.io-client": "^4.4.0",
     "sqlite3": "^5.0.2"
   },
   "devDependencies": {
