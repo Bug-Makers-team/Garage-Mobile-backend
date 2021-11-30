@@ -33,7 +33,7 @@ describe("Testing units for user", () => {
   it('services route works', async () => {
     const res = await mockRequest.post("/signin").auth("Omar", "test");
     const token = res.body.token;
-    const bearerResponse = await mockRequest.get('/services').set('Authorization', `Bearer ${token}`);
+    const bearerResponse = await mockRequest.get('/user/services').set('Authorization', `Bearer ${token}`);
    expect(bearerResponse.status).toBe(200);
 });
 it('users route works', async () => {
@@ -45,7 +45,7 @@ it('users route works', async () => {
 it('myservice route works', async () => {
   const res = await mockRequest.post("/signin").auth("Omar", "test");
     const token = res.body.token;
-  const bearerResponse = await mockRequest.get('/myservice').set('Authorization', `Bearer ${token}`);
+  const bearerResponse = await mockRequest.get('/user/myservice').set('Authorization', `Bearer ${token}`);
   expect(bearerResponse.status).toBe(200);
 });
 });
