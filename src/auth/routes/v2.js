@@ -19,7 +19,7 @@ routerUser.param('model', (req, res, next) => {
 
 routerUser.get('/:model',bearerAuth, handleGetAll);
 routerUser.get('/:model/:id',bearerAuth, handleGetOne);
-routerUser.post('/:model',bearerAuth,permissions('user'), handleCreate);
+routerUser.post('/:model',bearerAuth, handleCreate);
 routerUser.put('/:model/:id',bearerAuth,permissions('user'), handleUpdate);
 routerUser.delete('/:model/:id',bearerAuth,permissions('user'), handleDelete);
 
