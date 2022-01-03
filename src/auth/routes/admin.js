@@ -13,6 +13,7 @@ routerAdmin.param('model', (req, res, next) => {
     req.model = dataModules[modelName];
     next();
   } else {
+    console.log("admin");
     next('Invalid Model');
   }
 });

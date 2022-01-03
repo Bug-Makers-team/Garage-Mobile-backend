@@ -1,6 +1,6 @@
 'use strict';
 
-const myServiceModel = (sequelize, DataTypes) => sequelize.define('MyServices', {
+const myServiceModel = (sequelize, DataTypes) => sequelize.define('MyServicess', {
   user_id: { type: DataTypes.STRING, required: true },
   nameOfServices: { type: DataTypes.STRING, required: true,unique: true },
   description: { type: DataTypes.STRING, required: true },
