@@ -4,7 +4,7 @@ const express = require('express');
 const authRouter = express.Router();
 
 //
-const { users } = require('../models/index');
+const { users,serviceRout } = require('../models/index');
 const basicAuth = require('../middleware/basic')
 const bearerAuth = require('../middleware/bearer')
 const permissions = require('../middleware/acl')
@@ -62,6 +62,16 @@ authRouter.post(`/users`, bearerAuth, permissions('admin'), async (req, res, nex
   let newRecord = await users.create(obj);
   res.status(201).json(newRecord);
 }),
+
+authRouter.get('/services',async (req, res, next) => {
+
+  const userRecords = await serviceRout.findAll({});
+  let list=[];
+   userRecords.forEach(service => {
+    list.push(service);
+  });
+  res.status(200).json(list);
+});
 
 
 
