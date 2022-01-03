@@ -24,7 +24,7 @@ service.on('connection', (socket) => {
 
     socket.on("received", (payload) => {
         massegQ.received[payload.id] = payload
-        console.log("before deleting from Msg Q >>", massegQ);
+        console.log("Msg Q >>", massegQ);
         service.emit('recivedMsg', { id: payload.id, payload: massegQ.received[payload.id]});    
         delete massegQ.serviceQ[payload.id];
 
@@ -32,7 +32,7 @@ service.on('connection', (socket) => {
 
     socket.on('clientReceived', payload=>{
         delete massegQ.received[payload.id];
-        console.log("after deleting from Msg Q >>", massegQ);
+        // console.log("after deleting from Msg Q >>", massegQ);
 
     })
 
