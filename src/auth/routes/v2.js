@@ -13,6 +13,7 @@ routerUser.param('model', (req, res, next) => {
     req.model = dataModules[modelName];
     next();
   } else {
+    console.log("V2");
     next('Invalid Model');
   }
 });
