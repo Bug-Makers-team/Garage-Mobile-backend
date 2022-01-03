@@ -29,6 +29,7 @@ const myService = myServiceModel(sequelize, DataTypes);
 module.exports = {
 
     db: sequelize,
+    serviceRout:Service,
     users: userModel(sequelize, DataTypes),
     services:new Collection(Service),
     myservice:new Collection(myService)
