@@ -1,6 +1,6 @@
 'use strict';
 
-const serviceModel = (sequelize, DataTypes) => sequelize.define('AdminServicess', {
+const serviceModel = (sequelize, DataTypes) => sequelize.define('AdminServices', {
   name: { type: DataTypes.STRING, required: true },
   description: { type: DataTypes.STRING, required: true },
   category: { type: DataTypes.STRING, required: true },

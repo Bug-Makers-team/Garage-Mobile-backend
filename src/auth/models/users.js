@@ -6,10 +6,12 @@ const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET || 'bugsMakers';
 
 const userModel = (sequelize, DataTypes) => {
-  const model = sequelize.define('Userss', {
+  const model = sequelize.define('Users', {
     username: { type: DataTypes.STRING, required: true, unique: true },
     password: { type: DataTypes.STRING, required: true },
-    email: { type: DataTypes.STRING, required: true, unique: true },
+    geneder:{type: DataTypes.STRING, required: true},
+    cartype:{type: DataTypes.STRING},
+    email:{ type: DataTypes.STRING, required: true, unique: true },
     phoneNum: { 
         type: DataTypes.STRING,
          required: true,
